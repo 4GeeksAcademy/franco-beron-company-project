@@ -2,6 +2,8 @@ const form = document.getElementById("formulario-solicitud");
 
 if (form) {
   const successBox = document.getElementById("form-success");
+  const RESET_DELAY_MS = 2500;
+  let pendingResetTimeout = null;
 
   const validators = {
     nombre: (value) => {
@@ -142,13 +144,19 @@ if (form) {
       successBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
 
-    form.reset();
+    if (pendingResetTimeout) {
+      clearTimeout(pendingResetTimeout);
+    }
 
-    fieldNames.forEach((fieldName) => {
-      const field = getField(fieldName);
-      if (!field) return;
-      setFieldState(field, "");
-    });
+    pendingResetTimeout = setTimeout(() => {
+      form.reset();
+
+      fieldNames.forEach((fieldName) => {
+        const field = getField(fieldName);
+        if (!field) return;
+        setFieldState(field, "");
+      });
+    }, RESET_DELAY_MS);
   });
 
   form.addEventListener("reset", () => {
