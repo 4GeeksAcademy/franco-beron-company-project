@@ -75,13 +75,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- GOOGLE FONTS -->
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;700&display=swap"
     rel="stylesheet"
   />
 
-  <!-- TAILWIND -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -91,15 +90,13 @@
           colors: {
             ink: "#0a0a0a",
             paper: "#f5f0e8",
-
             amber: {
               DEFAULT: "#c8922a",
               light: "#e8b84b",
               pale: "#f5e6c0",
             },
-
             stone: "#2a2520",
-            mist: "#a29b90",
+            mist: "#8a847a",
             rule: "rgba(200,146,42,0.25)",
           },
 
@@ -114,7 +111,6 @@
                 opacity: "0",
                 transform: "translateY(20px)",
               },
-
               "100%": {
                 opacity: "1",
                 transform: "translateY(0)",
@@ -126,7 +122,6 @@
                 opacity: "0",
                 transform: "scale(1.04)",
               },
-
               "100%": {
                 opacity: "1",
                 transform: "scale(1)",
@@ -137,7 +132,6 @@
               from: {
                 transform: "translateX(0)",
               },
-
               to: {
                 transform: "translateX(-50%)",
               },
@@ -148,7 +142,6 @@
                 opacity: ".4",
                 transform: "scaleY(1)",
               },
-
               "50%": {
                 opacity: "1",
                 transform: "scaleY(1.2)",
@@ -167,162 +160,38 @@
     };
   </script>
 
-  <!-- STRUCTURED DATA -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Nexova Solutions",
-    "url":"https://nexovasolutions.com",
-    "logo":"https://nexovasolutions.com/logo.png",
-    "description":"Empresa especializada en automatización con inteligencia artificial, outsourcing y reclutamiento especializado.",
-    "sameAs": [],
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Valencia",
-      "addressCountry":"ES"
-    },
-
-    "areaServed":[
-      {
-        "@type":"Country",
-        "name":"España"
-      },
-      {
-        "@type":"Country",
-        "name":"Estados Unidos"
-      }
-    ],
-
-    "services":[
-      "Automatización IA",
-      "Outsourcing de soporte",
-      "Reclutamiento especializado",
-      "Dashboards ejecutivos"
-    ]
-  }
-  </script>
-
-  <!-- FAQ STRUCTURED DATA -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"¿Qué procesos automatiza Nexova Solutions?",
-
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Nexova automatiza procesos de soporte, reclutamiento, reporting, dashboards ejecutivos y operaciones empresariales con inteligencia artificial."
-        }
-      },
-
-      {
-        "@type":"Question",
-        "name":"¿Nexova trabaja con empresas pequeñas y medianas?",
-
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Sí. Nexova trabaja con startups, empresas medianas y organizaciones con operaciones regionales."
-        }
-      },
-
-      {
-        "@type":"Question",
-        "name":"¿Qué incluye el diagnóstico operativo?",
-
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"El diagnóstico identifica cuellos de botella, oportunidades de automatización y mejoras operativas en reclutamiento, soporte y procesos internos."
-        }
-      }
-    ]
-  }
-  </script>
-
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- ACCESSIBILITY -->
-  <style>
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: #c8922a;
-      color: #000;
-      padding: 12px 18px;
-      z-index: 9999;
-      transition: top .2s ease;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  </style>
 </head>
 
-<body class="bg-ink text-paper font-sans overflow-x-hidden">
-
-  <!-- SKIP LINK -->
-  <a href="#main-content" class="skip-link">
-    Saltar al contenido principal
-  </a>
+<body class="bg-ink text-paper font-sans overflow-x-hidden cursor-none">
 
   <!-- Cursor -->
-  <div id="cursor" class="cursor" aria-hidden="true"></div>
-  <div id="cursor-ring" class="cursor-ring" aria-hidden="true"></div>
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-ring" class="cursor-ring"></div>
 
   <!-- HEADER -->
   <header
     id="site-header"
     class="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex items-center justify-between transition-all duration-300"
   >
-
     <a
       href="#inicio"
       class="flex items-center gap-2 font-serif text-xl tracking-[.08em]"
-      aria-label="Ir al inicio"
     >
       <span class="w-1.5 h-1.5 rounded-full bg-amber"></span>
       Nexova Solutions
     </a>
 
-    <nav
-      class="hidden md:flex items-center gap-10"
-      aria-label="Navegación principal"
-    >
-
-      <a
-        href="#servicios"
-        class="text-xs uppercase tracking-[.18em] text-mist hover:text-paper transition"
-      >
+    <nav class="hidden md:flex items-center gap-10">
+      <a href="#servicios" class="text-xs uppercase tracking-[.18em] text-mist hover:text-paper transition">
         Servicios
       </a>
 
-      <a
-        href="#automatizacion"
-        class="text-xs uppercase tracking-[.18em] text-mist hover:text-paper transition"
-      >
+      <a href="#automatizacion" class="text-xs uppercase tracking-[.18em] text-mist hover:text-paper transition">
         Automatización
       </a>
 
-      <a
-        href="#impacto"
-        class="text-xs uppercase tracking-[.18em] text-mist hover:text-paper transition"
-      >
+      <a href="#impacto" class="text-xs uppercase tracking-[.18em] text-mist hover:text-paper transition">
         Impacto
       </a>
 
@@ -334,13 +203,10 @@
       </a>
     </nav>
 
-    <!-- MOBILE -->
+    <!-- Mobile -->
     <button
       id="menu-toggle"
       class="md:hidden border border-rule px-4 py-2"
-      aria-label="Abrir menú"
-      aria-expanded="false"
-      aria-controls="mobile-nav"
     >
       ☰
     </button>
@@ -350,29 +216,17 @@
   <div
     id="mobile-nav"
     class="fixed inset-0 bg-black/95 z-[60] hidden flex-col items-center justify-center gap-10"
-    aria-hidden="true"
   >
-
     <button
       id="close-menu"
       class="absolute top-8 right-8 text-3xl text-mist"
-      aria-label="Cerrar menú"
     >
       ×
     </button>
 
-    <a href="#servicios" class="font-serif text-5xl">
-      Servicios
-    </a>
-
-    <a href="#automatizacion" class="font-serif text-5xl">
-      Automatización
-    </a>
-
-    <a href="#impacto" class="font-serif text-5xl">
-      Impacto
-    </a>
-
+    <a href="#servicios" class="font-serif text-5xl">Servicios</a>
+    <a href="#automatizacion" class="font-serif text-5xl">Automatización</a>
+    <a href="#impacto" class="font-serif text-5xl">Impacto</a>
     <a
       href="application.html"
       class="bg-amber hover:bg-amber-light text-ink text-xs uppercase tracking-[.14em] px-6 py-3 transition"
@@ -381,7 +235,7 @@
     </a>
   </div>
 
-  <main id="main-content">
+  <main>
 
     <!-- HERO -->
     <section
@@ -409,16 +263,15 @@
           class="mt-8 text-mist leading-8 max-w-xl animate-fade-up"
           style="animation-delay:.3s"
         >
-          Nexova Solutions integra automatización con inteligencia artificial,
-          outsourcing de soporte y reclutamiento especializado para acelerar
-          operaciones críticas en empresas modernas.
+          En Nexova integramos reclutamiento especializado,
+          outsourcing de soporte y automatización con IA
+          para acelerar operaciones críticas.
         </p>
 
         <div
           class="flex flex-wrap gap-4 mt-10 animate-fade-up"
           style="animation-delay:.45s"
         >
-
           <a
             href="application.html"
             class="bg-amber hover:bg-amber-light text-ink px-8 py-4 text-xs uppercase tracking-[.18em] transition"
@@ -434,32 +287,34 @@
           </a>
         </div>
 
-        <!-- GEO CONTENT -->
-        <div class="mt-16 max-w-2xl reveal">
+        <!-- Stats -->
+        <div
+          class="flex flex-wrap gap-14 mt-16 pt-10 border-t border-rule animate-fade-up"
+          style="animation-delay:.6s"
+        >
 
-          <h2 class="font-serif text-3xl mb-6">
-            Servicios empresariales impulsados por IA
-          </h2>
+          <div>
+            <span class="font-serif text-5xl">12+</span>
+            <p class="text-xs uppercase tracking-[.18em] text-mist mt-2">
+              Años de experiencia
+            </p>
+          </div>
 
-          <ul class="space-y-4 text-mist leading-7">
-            <li>
-              • Automatización de procesos empresariales con inteligencia artificial
-            </li>
+          <div>
+            <span class="font-serif text-5xl">120</span>
+            <p class="text-xs uppercase tracking-[.18em] text-mist mt-2">
+              Especialistas
+            </p>
+          </div>
 
-            <li>
-              • Reclutamiento especializado y headhunting IT
-            </li>
+          <div>
+            <span class="font-serif text-5xl">2</span>
+            <p class="text-xs uppercase tracking-[.18em] text-mist mt-2">
+              Países
+            </p>
+          </div>
 
-            <li>
-              • Outsourcing de soporte omnicanal
-            </li>
-
-            <li>
-              • Dashboards ejecutivos y análisis operativo en tiempo real
-            </li>
-          </ul>
         </div>
-
       </div>
 
       <!-- RIGHT -->
@@ -468,9 +323,7 @@
         <img
           src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
           class="absolute inset-0 w-full h-full object-cover opacity-0 animate-img-reveal saturate-[.7]"
-          alt="Equipo empresarial analizando operaciones y dashboards ejecutivos"
-          loading="eager"
-          decoding="async"
+          alt=""
         />
 
         <div
@@ -480,7 +333,6 @@
         <div
           class="absolute bottom-40 right-8 bg-black/80 border border-rule backdrop-blur-md p-6 max-w-xs"
         >
-
           <p class="uppercase tracking-[.18em] text-[11px] text-amber mb-3">
             Reto habitual
           </p>
@@ -493,11 +345,263 @@
       </div>
     </section>
 
-    <!-- RESTO DEL HTML ORIGINAL -->
-    <!-- TODO TU CONTENIDO SIGUE EXACTAMENTE IGUAL -->
-    <!-- NO ES NECESARIO MODIFICAR SECCIONES FUNCIONALES -->
+    <!-- MARQUEE -->
+    <section class="border-y border-rule py-5 overflow-hidden bg-stone">
+      <div class="flex gap-16 whitespace-nowrap animate-marquee w-max">
 
-    <!-- FAQ -->
+        <span class="font-serif text-xl text-mist">Reclutamiento especializado</span>
+        <span class="font-serif text-xl text-mist">Outsourcing de soporte</span>
+        <span class="font-serif text-xl text-mist">Automatización IA</span>
+        <span class="font-serif text-xl text-mist">Dashboards ejecutivos</span>
+
+        <span class="font-serif text-xl text-mist">Reclutamiento especializado</span>
+        <span class="font-serif text-xl text-mist">Outsourcing de soporte</span>
+        <span class="font-serif text-xl text-mist">Automatización IA</span>
+        <span class="font-serif text-xl text-mist">Dashboards ejecutivos</span>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section
+      id="servicios"
+      class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-28"
+    >
+
+      <div class="grid md:grid-cols-2 gap-10 mb-20 reveal">
+
+        <div>
+          <p class="uppercase tracking-[.22em] text-[11px] text-amber mb-6">
+            Capacidades
+          </p>
+
+          <h2 class="font-serif text-[clamp(2.5rem,5vw,5rem)] leading-none font-light">
+            Lo que
+            <em class="italic text-amber">construimos</em>
+            para ti
+          </h2>
+        </div>
+
+        <p class="text-mist leading-8 self-end">
+          Soluciones para empresas que necesitan escalar
+          operaciones sin perder control ni velocidad.
+        </p>
+
+      </div>
+
+      <!-- Cards -->
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 border border-rule bg-rule gap-px">
+
+        <!-- CARD -->
+        <article class="bg-ink p-10 hover:bg-stone transition reveal">
+          <span class="font-serif text-6xl text-amber/20">01</span>
+
+          <h3 class="mt-8 text-lg font-medium">
+            Reclutamiento y Headhunting
+          </h3>
+
+          <p class="mt-5 text-sm leading-7 text-mist">
+            Pipeline asistido por IA con scoring automático
+            y visibilidad completa del proceso.
+          </p>
+        </article>
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-1">
+          <span class="font-serif text-6xl text-amber/20">02</span>
+
+          <h3 class="mt-8 text-lg font-medium">
+            Outsourcing de Soporte
+          </h3>
+
+          <p class="mt-5 text-sm leading-7 text-mist">
+            Atención omnicanal con SLA reales y análisis
+            de sentimiento automatizado.
+          </p>
+        </article>
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-2">
+          <span class="font-serif text-6xl text-amber/20">03</span>
+
+          <h3 class="mt-8 text-lg font-medium">
+            Dashboards Ejecutivos
+          </h3>
+
+          <p class="mt-5 text-sm leading-7 text-mist">
+            KPIs en tiempo real con alertas inteligentes
+            y decisiones basadas en datos.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- IA -->
+    <section
+      id="automatizacion"
+      class="bg-stone py-28 px-8 sm:px-12 lg:px-20 relative overflow-hidden"
+    >
+
+      <div
+        class="absolute right-[-3rem] top-1/2 -translate-y-1/2 font-serif text-[20rem] text-amber/[.03] leading-none select-none"
+      >
+        IA
+      </div>
+
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+
+        <div class="relative aspect-[4/3] overflow-hidden reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+            class="w-full h-full object-cover saturate-[.7]"
+            alt=""
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-amber/20 to-transparent"
+          ></div>
+        </div>
+
+        <div>
+
+          <div class="reveal">
+            <p class="uppercase tracking-[.22em] text-[11px] text-amber mb-6">
+              Automatización
+            </p>
+
+            <h2 class="font-serif text-[clamp(2.5rem,5vw,5rem)] leading-none font-light">
+              Procesos críticos
+              <em class="italic text-amber">sin fricción</em>
+            </h2>
+
+            <p class="mt-8 text-mist leading-8">
+              Integramos agentes, dashboards y automatizaciones
+              para transformar cuellos de botella en flujos
+              operativos escalables.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section
+      id="impacto"
+      class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-28"
+    >
+
+      <div class="grid md:grid-cols-2 gap-10 mb-20 reveal">
+
+        <div>
+          <p class="uppercase tracking-[.22em] text-[11px] text-amber mb-6">
+            Resultados
+          </p>
+
+          <h2 class="font-serif text-[clamp(2.5rem,5vw,5rem)] leading-none font-light">
+            Beneficios para
+            <em class="italic text-amber">dirección</em>
+          </h2>
+        </div>
+
+        <p class="text-mist leading-8 self-end">
+          Métricas concretas que permiten escalar operaciones
+          con mejor visibilidad, menor carga manual y decisiones
+          ejecutivas más rápidas.
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 border border-rule bg-rule gap-px">
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal">
+          <p class="font-serif text-5xl text-amber leading-none">+Visibilidad</p>
+
+          <h3 class="mt-6 text-base font-medium">
+            Operaciones en tiempo real
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-mist">
+            Estado de selección, soporte y ventas en tableros actualizados al momento.
+          </p>
+        </article>
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-1">
+          <p class="font-serif text-5xl text-amber leading-none">-Carga</p>
+
+          <h3 class="mt-6 text-base font-medium">
+            Automatización de tareas
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-mist">
+            Menos trabajo repetitivo para que los equipos se enfoquen en tareas de alto valor.
+          </p>
+        </article>
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-2">
+          <p class="font-serif text-5xl text-amber leading-none">+Velocidad</p>
+
+          <h3 class="mt-6 text-base font-medium">
+            Ciclos de decisión más cortos
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-mist">
+            Datos en tiempo real para responder antes a clientes y prioridades operativas.
+          </p>
+        </article>
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-3">
+          <p class="font-serif text-5xl text-amber leading-none">+Escala</p>
+
+          <h3 class="mt-6 text-base font-medium">
+            Crecimiento sin fricciones
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-mist">
+            Procesos estandarizados que mantienen calidad de servicio al aumentar volumen.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section
+      id="contacto"
+      class="py-32 px-8 text-center relative overflow-hidden"
+    >
+
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle,rgba(200,146,42,.08)_0%,transparent_70%)]"
+      ></div>
+
+      <div class="max-w-4xl mx-auto relative z-10 reveal">
+
+        <p class="uppercase tracking-[.22em] text-[11px] text-amber mb-8">
+          Próximo paso
+        </p>
+
+        <h2 class="font-serif text-[clamp(3rem,6vw,6rem)] leading-none font-light">
+          Activa tu diagnóstico
+          <em class="italic text-amber">operativo</em>
+        </h2>
+
+        <p class="mt-8 text-mist leading-8 max-w-2xl mx-auto">
+          Comparte tus objetivos de reclutamiento,
+          soporte y automatización.
+        </p>
+
+        <a
+          href="application.html"
+          class="inline-block mt-12 bg-amber hover:bg-amber-light text-ink px-10 py-5 text-xs uppercase tracking-[.18em] transition"
+        >
+          Solicitar diagnóstico →
+        </a>
+
+      </div>
+    </section>
+<!-- FAQ -->
     <section
       class="max-w-5xl mx-auto px-8 sm:px-12 lg:px-20 py-28"
       aria-labelledby="faq-title"
@@ -555,21 +659,94 @@
 
       </div>
     </section>
-
   </main>
 
+ 
   <!-- FOOTER -->
   <footer
-    class="border-t border-rule py-10 px-8 lg:px-20 flex flex-col md:flex-row gap-5 justify-between items-center"
+    class="border-t border-rule py-10 px-8 lg:px-20"
   >
 
-    <p class="text-sm text-mist text-center">
-      © 2026 Nexova Solutions
-    </p>
+    <div
+      class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10"
+    >
 
-    <p class="text-sm text-mist text-center">
-      Valencia · Miami
-    </p>
+      <div>
+
+        <h2 class="font-serif text-2xl">
+          Nexova
+        </h2>
+
+        <p class="mt-4 text-sm text-mist leading-7">
+          Consultora de recursos humanos y adquisición de talento especializada en empresas tecnológicas, retail y servicios financieros.
+        </p>
+
+      </div>
+
+      <div>
+
+        <h3 class="uppercase tracking-[.18em] text-xs text-amber">
+          Contacto
+        </h3>
+
+        <ul class="mt-5 space-y-3 text-sm text-mist">
+
+          <li>
+            contacto@nexova.com
+          </li>
+
+          <li>
+            Valencia: +34 960 123 456
+          </li>
+
+          <li>
+            Miami: +1 305 555 0191
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div>
+
+        <h3 class="uppercase tracking-[.18em] text-xs text-amber">
+          Redes
+        </h3>
+
+        <div class="mt-5 flex gap-5">
+
+          <a
+            href="https://linkedin.com/company/nexova"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-mist hover:text-paper transition"
+            aria-label="LinkedIn de Nexova"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="https://instagram.com/nexova"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-mist hover:text-paper transition"
+            aria-label="Instagram de Nexova"
+          >
+            Instagram
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div
+      class="mt-12 pt-8 border-t border-rule text-center text-sm text-mist"
+    >
+      © 2025 Nexova. Todos los derechos reservados.
+    </div>
+
   </footer>
 
   <script>
@@ -602,34 +779,21 @@
     menuToggle.addEventListener("click", () => {
       mobileNav.classList.remove("hidden");
       mobileNav.classList.add("flex");
-
-      menuToggle.setAttribute("aria-expanded", "true");
-      mobileNav.setAttribute("aria-hidden", "false");
-
       document.body.style.overflow = "hidden";
     });
 
-    closeMenu.addEventListener("click", closeMobileMenu);
-
-    mobileNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMobileMenu);
-    });
-
-    function closeMobileMenu() {
+    closeMenu.addEventListener("click", () => {
       mobileNav.classList.remove("flex");
       mobileNav.classList.add("hidden");
-
-      menuToggle.setAttribute("aria-expanded", "false");
-      mobileNav.setAttribute("aria-hidden", "true");
-
       document.body.style.overflow = "";
-    }
+    });
 
-    // ESC CLOSE
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeMobileMenu();
-      }
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("flex");
+        mobileNav.classList.add("hidden");
+        document.body.style.overflow = "";
+      });
     });
 
     // Reveal
