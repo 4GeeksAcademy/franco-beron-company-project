@@ -62,6 +62,16 @@ ai-engineering-company-project-monorepo/
 4. **Review** each top-level folder `README.md` to understand intended responsibilities (`uis/`, `services/`, `data/`, `skills/`, etc.).
 5. **Start implementing** milestone deliverables in `uis/` and `services/`, reusing `packages/shared/` and `data/` as needed.
 
+## Run Locally (Codespaces Compatible)
+
+From the repository root, you can serve the static milestone files with:
+
+```bash
+npx http-server . -p 3000 -a 0.0.0.0
+```
+
+Then open port `3000` in your browser.
+
 ---
 
 ## Milestones (reference)

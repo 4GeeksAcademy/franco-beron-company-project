@@ -68,6 +68,35 @@
     content="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
   />
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nexova Solutions",
+      "url": "https://nexovasolutions.com/",
+      "logo": "https://nexovasolutions.com/favicon.ico",
+      "description": "Consultora de recursos humanos y seleccion de talento con automatizacion de procesos empresariales con IA.",
+      "email": "contacto@nexova.com",
+      "telephone": "+34 960 123 456",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Valencia",
+          "addressCountry": "ES"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Miami",
+          "addressCountry": "US"
+        }
+      ],
+      "sameAs": [
+        "https://linkedin.com/company/nexova",
+        "https://instagram.com/nexova"
+      ]
+    }
+  </script>
+
   <!-- FAVICON -->
   <link rel="icon" href="/favicon.ico" />
 
@@ -160,19 +189,14 @@
     };
   </script>
 
-  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body class="bg-ink text-paper font-sans overflow-x-hidden">
 
-  <!-- Cursor -->
-  <div id="cursor" class="cursor"></div>
-  <div id="cursor-ring" class="cursor-ring"></div>
-
   <!-- HEADER -->
   <header
     id="site-header"
-    class="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex items-center justify-between transition-all duration-300"
+    class="fixed top-0 left-0 right-0 z-50 px-8 py-2 flex items-center justify-between transition-all duration-300"
   >
     <a
       href="#inicio"
@@ -182,7 +206,7 @@
       Nexova Solutions
     </a>
 
-    <nav class="hidden md:flex items-center gap-10">
+    <nav class="hidden md:flex items-center gap-10" aria-label="Navegacion principal">
       <a href="#servicios" class="text-xs uppercase tracking-[.18em] text-mist hover:text-paper transition">
         Servicios
       </a>
@@ -207,6 +231,9 @@
     <button
       id="menu-toggle"
       class="md:hidden border border-rule px-4 py-2"
+      aria-label="Abrir menu de navegacion"
+      aria-controls="mobile-nav"
+      aria-expanded="false"
     >
       ☰
     </button>
@@ -216,10 +243,14 @@
   <div
     id="mobile-nav"
     class="fixed inset-0 bg-black/95 z-[60] hidden flex-col items-center justify-center gap-10"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menu movil"
   >
     <button
       id="close-menu"
       class="absolute top-8 right-8 text-3xl text-mist"
+      aria-label="Cerrar menu de navegacion"
     >
       ×
     </button>
@@ -323,7 +354,7 @@
         <img
           src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
           class="absolute inset-0 w-full h-full object-cover opacity-0 animate-img-reveal saturate-[.7]"
-          alt=""
+          alt="Equipo de consultoria de Nexova en reunion estrategica"
         />
 
         <div
@@ -406,7 +437,7 @@
           </p>
         </article>
 
-        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-1">
+        <article class="bg-ink p-10 hover:bg-stone transition reveal [transition-delay:100ms]">
           <span class="font-serif text-6xl text-amber/20">02</span>
 
           <h3 class="mt-8 text-lg font-medium">
@@ -419,7 +450,7 @@
           </p>
         </article>
 
-        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-2">
+        <article class="bg-ink p-10 hover:bg-stone transition reveal [transition-delay:200ms]">
           <span class="font-serif text-6xl text-amber/20">03</span>
 
           <h3 class="mt-8 text-lg font-medium">
@@ -454,7 +485,7 @@
           <img
             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
             class="w-full h-full object-cover saturate-[.7]"
-            alt=""
+            alt="Analista revisando metricas operativas en panel digital"
           />
 
           <div
@@ -527,7 +558,7 @@
           </p>
         </article>
 
-        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-1">
+        <article class="bg-ink p-10 hover:bg-stone transition reveal [transition-delay:100ms]">
           <p class="font-serif text-5xl text-amber leading-none">-Carga</p>
 
           <h3 class="mt-6 text-base font-medium">
@@ -539,7 +570,7 @@
           </p>
         </article>
 
-        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-2">
+        <article class="bg-ink p-10 hover:bg-stone transition reveal [transition-delay:200ms]">
           <p class="font-serif text-5xl text-amber leading-none">+Velocidad</p>
 
           <h3 class="mt-6 text-base font-medium">
@@ -551,7 +582,7 @@
           </p>
         </article>
 
-        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-3">
+        <article class="bg-ink p-10 hover:bg-stone transition reveal [transition-delay:300ms]">
           <p class="font-serif text-5xl text-amber leading-none">+Escala</p>
 
           <h3 class="mt-6 text-base font-medium">
@@ -754,7 +785,7 @@
     const header = document.getElementById("site-header");
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY >= 0) {
+      if (window.scrollY > 16) {
         header.classList.add(
           "bg-black/90",
           "backdrop-blur-xl",
@@ -779,12 +810,14 @@
     menuToggle.addEventListener("click", () => {
       mobileNav.classList.remove("hidden");
       mobileNav.classList.add("flex");
+      menuToggle.setAttribute("aria-expanded", "true");
       document.body.style.overflow = "hidden";
     });
 
     closeMenu.addEventListener("click", () => {
       mobileNav.classList.remove("flex");
       mobileNav.classList.add("hidden");
+      menuToggle.setAttribute("aria-expanded", "false");
       document.body.style.overflow = "";
     });
 
@@ -792,6 +825,7 @@
       link.addEventListener("click", () => {
         mobileNav.classList.remove("flex");
         mobileNav.classList.add("hidden");
+        menuToggle.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
       });
     });
@@ -799,11 +833,16 @@
     // Reveal
     const reveals = document.querySelectorAll(".reveal");
 
+    reveals.forEach((el) => {
+      el.classList.add("opacity-0", "translate-y-6", "transition-all", "duration-700");
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.remove("opacity-0", "translate-y-6");
+            entry.target.classList.add("opacity-100", "translate-y-0");
           }
         });
       },
@@ -813,47 +852,6 @@
     );
 
     reveals.forEach((el) => observer.observe(el));
-
-    // Cursor
-    const cursor = document.getElementById("cursor");
-    const ring = document.getElementById("cursor-ring");
-
-    let mx = 0;
-    let my = 0;
-    let rx = 0;
-    let ry = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mx = e.clientX;
-      my = e.clientY;
-
-      cursor.style.left = mx + "px";
-      cursor.style.top = my + "px";
-    });
-
-    function animateRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-
-      ring.style.left = rx + "px";
-      ring.style.top = ry + "px";
-
-      requestAnimationFrame(animateRing);
-    }
-
-    animateRing();
-
-    document.querySelectorAll("a, button, article").forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        cursor.classList.add("grow");
-        ring.classList.add("grow");
-      });
-
-      el.addEventListener("mouseleave", () => {
-        cursor.classList.remove("grow");
-        ring.classList.remove("grow");
-      });
-    });
   </script>
 
 </body>

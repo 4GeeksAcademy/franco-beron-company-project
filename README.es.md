@@ -62,6 +62,16 @@ ai-engineering-company-project-monorepo/
 4. **Revisa** los `README.md` de cada carpeta raíz para entender responsabilidades (`uis/`, `services/`, `data/`, `skills/`, etc.).
 5. **Empieza a implementar** entregables por hito en `uis/` y `services/`, reutilizando `packages/shared/` y `data/` según corresponda.
 
+## Ejecutar Localmente (Compatible con Codespaces)
+
+Desde la raíz del repositorio, puedes servir los archivos estáticos del hito con:
+
+```bash
+npx http-server . -p 3000 -a 0.0.0.0
+```
+
+Luego abre el puerto `3000` en tu navegador.
+
 ---
 
 ## Hitos (referencia)

@@ -8,7 +8,7 @@
 
     <meta
       name="description"
-      content="Inicia tu diagnóstico operativo con Nexova Solutions."
+      content="Inicia tu diagnostico operativo con Nexova Solutions."
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,15 +46,12 @@
   </head>
 
   <body class="bg-ink text-paper font-sans overflow-x-hidden">
-
-    <!-- BACKGROUND -->
     <div class="fixed inset-0 opacity-20 pointer-events-none">
       <div
         class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(200,146,42,0.08),transparent_40%)]"
       ></div>
     </div>
 
-    <!-- HEADER -->
     <header
       class="sticky top-0 z-50 border-b border-amber/20 bg-black/90 backdrop-blur-xl h-14"
     >
@@ -66,10 +63,7 @@
           class="flex items-center gap-3 text-paper transition hover:text-amber"
         >
           <span class="h-2 w-2 rounded-full bg-amber"></span>
-
-          <span
-            class="font-serif text-lg font-semibold tracking-[0.08em]"
-          >
+          <span class="font-serif text-lg font-semibold tracking-[0.08em]">
             Nexova Solutions
           </span>
         </a>
@@ -78,15 +72,12 @@
           href="index.html"
           class="text-sm tracking-[0.08em] text-mist transition hover:text-paper"
         >
-          ← Volver al inicio
+          <- Volver al inicio
         </a>
       </div>
     </header>
 
-    <!-- MAIN -->
     <main class="grid min-h-screen lg:grid-cols-2">
-
-      <!-- SIDEBAR -->
       <aside
         class="relative overflow-hidden border-r border-amber/20 bg-stone px-8 py-16 lg:sticky lg:top-[81px] lg:h-[calc(100vh-81px)] lg:px-16"
       >
@@ -95,48 +86,40 @@
         ></div>
 
         <div class="relative z-10">
-
           <p
             class="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-amber"
           >
             <span class="h-px w-6 bg-amber"></span>
-            Diagnóstico operativo
+            Diagnostico operativo
           </p>
 
           <h1
             class="max-w-xl font-serif text-5xl font-light leading-tight text-paper"
           >
             Tu hoja de ruta
-            <em class="text-amber italic">empieza aquí</em>
+            <em class="text-amber italic">empieza aqui</em>
           </h1>
 
-          <p
-            class="mt-6 max-w-md text-sm leading-8 text-mist"
-          >
-            Cuéntanos sobre tu organización y tus objetivos.
-            En menos de 48 h recibirás una propuesta de
-            diagnóstico personalizada.
+          <p class="mt-6 max-w-md text-sm leading-8 text-mist">
+            Cuentanos sobre tu organizacion y tus objetivos. En menos de 48 h
+            recibiras una propuesta de diagnostico personalizada.
           </p>
 
           <ul class="mt-12 space-y-5 text-sm text-mist">
-
             <li class="flex gap-3 leading-7">
-              <span class="text-amber">→</span>
-              Diagnóstico inicial sin coste para empresas calificadas
+              <span class="text-amber">-></span>
+              Diagnostico inicial sin coste para empresas calificadas
             </li>
-
             <li class="flex gap-3 leading-7">
-              <span class="text-amber">→</span>
-              Consultor especializado por área de negocio
+              <span class="text-amber">-></span>
+              Consultor especializado por area de negocio
             </li>
-
             <li class="flex gap-3 leading-7">
-              <span class="text-amber">→</span>
+              <span class="text-amber">-></span>
               Hoja de ruta priorizada con impacto estimado
             </li>
-
             <li class="flex gap-3 leading-7">
-              <span class="text-amber">→</span>
+              <span class="text-amber">-></span>
               Respuesta garantizada en menos de 48 horas
             </li>
           </ul>
@@ -146,7 +129,7 @@
           >
             <div>
               <span class="block text-lg font-medium text-paper">12+</span>
-              años de experiencia
+              anos de experiencia
             </div>
 
             <div>
@@ -156,7 +139,7 @@
 
             <div>
               <span class="block text-lg font-medium text-paper">
-                Valencia · Miami
+                Valencia - Miami
               </span>
               operaciones
             </div>
@@ -164,280 +147,310 @@
         </div>
       </aside>
 
-      <!-- FORM -->
       <section class="px-6 py-14 sm:px-10 lg:px-16">
-
         <div class="mx-auto max-w-2xl">
-
-          <!-- PROGRESS -->
-          <div class="mb-12">
-
+          <div class="mb-12" role="status" aria-live="polite">
             <div
               class="mb-3 flex items-center justify-between text-xs tracking-[0.08em] text-mist"
             >
-              <span class="text-amber">
-                Paso 1 de 3 — Datos personales
+              <span class="text-amber" id="progress-primary">
+                Paso 1 de 3 - Datos personales
               </span>
-
-              <span>33%</span>
+              <span id="progress-secondary">33%</span>
             </div>
 
             <div class="h-px w-full bg-amber/20">
-              <div class="h-full w-1/3 bg-amber"></div>
+              <div id="progress-fill" class="h-full bg-amber" style="width: 33%"></div>
             </div>
           </div>
 
-          <!-- STEP -->
-          <div>
+          <p id="form-live-region" class="sr-only" aria-live="polite"></p>
 
-            <h2 class="font-serif text-4xl font-light text-paper">
-              Datos personales
-            </h2>
+          <form id="application-form" class="space-y-12" novalidate>
+            <div data-step-panel="1" class="border-t border-amber/20 pt-10">
+              <h2 class="font-serif text-4xl font-light text-paper">Datos personales</h2>
+              <p class="mt-3 text-sm leading-7 text-mist">
+                Necesitamos datos de la persona de contacto principal.
+              </p>
 
-            <p class="mt-3 text-sm leading-7 text-mist">
-              ¿Con quién hablaremos? Necesitamos datos de
-              la persona de contacto principal.
-            </p>
+              <fieldset class="mt-10 space-y-8">
+                <legend class="sr-only">Informacion de contacto</legend>
 
-            <form class="mt-10 space-y-8">
+                <div class="grid gap-6 sm:grid-cols-2">
+                  <div class="space-y-2">
+                    <label for="first-name" class="text-xs uppercase tracking-[0.1em] text-mist">
+                      Nombre
+                    </label>
+                    <input
+                      id="first-name"
+                      name="firstName"
+                      type="text"
+                      autocomplete="given-name"
+                      required
+                      placeholder="Laura"
+                      class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
+                    />
+                  </div>
 
-              <!-- ROW -->
-              <div class="grid gap-6 sm:grid-cols-2">
+                  <div class="space-y-2">
+                    <label for="last-name" class="text-xs uppercase tracking-[0.1em] text-mist">
+                      Apellidos
+                    </label>
+                    <input
+                      id="last-name"
+                      name="lastName"
+                      type="text"
+                      autocomplete="family-name"
+                      required
+                      placeholder="Mendoza"
+                      class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
+                    />
+                  </div>
+                </div>
 
                 <div class="space-y-2">
-                  <label
-                    class="text-xs uppercase tracking-[0.1em] text-mist"
-                  >
-                    Nombre
+                  <label for="corporate-email" class="text-xs uppercase tracking-[0.1em] text-mist">
+                    Email corporativo
                   </label>
-
                   <input
-                    type="text"
-                    placeholder="Laura"
+                    id="corporate-email"
+                    name="corporateEmail"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    placeholder="laura@empresa.com"
                     class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
                   />
                 </div>
 
                 <div class="space-y-2">
-                  <label
-                    class="text-xs uppercase tracking-[0.1em] text-mist"
-                  >
-                    Apellidos
+                  <label for="phone" class="text-xs uppercase tracking-[0.1em] text-mist">
+                    Telefono
                   </label>
-
                   <input
-                    type="text"
-                    placeholder="Mendoza"
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    required
+                    placeholder="+34 600 000 000"
                     class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
                   />
                 </div>
-              </div>
 
-              <!-- EMAIL -->
-              <div class="space-y-2">
-                <label
-                  class="text-xs uppercase tracking-[0.1em] text-mist"
-                >
-                  Email corporativo
-                </label>
+                <div class="space-y-2">
+                  <label for="position" class="text-xs uppercase tracking-[0.1em] text-mist">
+                    Cargo
+                  </label>
+                  <select
+                    id="position"
+                    name="position"
+                    required
+                    class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
+                  >
+                    <option value="">Seleccionar cargo</option>
+                    <option value="ceo">CEO / Director General</option>
+                    <option value="coo">COO / Director Operaciones</option>
+                    <option value="cto">CTO / Director Tecnologia</option>
+                    <option value="hr">Director RRHH</option>
+                    <option value="marketing">Director Marketing</option>
+                  </select>
+                </div>
+              </fieldset>
 
-                <input
-                  type="email"
-                  placeholder="laura@empresa.com"
-                  class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
-                />
-              </div>
-
-              <!-- PHONE -->
-              <div class="space-y-2">
-                <label
-                  class="text-xs uppercase tracking-[0.1em] text-mist"
-                >
-                  Teléfono
-                </label>
-
-                <input
-                  type="tel"
-                  placeholder="+34 600 000 000"
-                  class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
-                />
-              </div>
-
-              <!-- SELECT -->
-              <div class="space-y-2">
-                <label
-                  class="text-xs uppercase tracking-[0.1em] text-mist"
-                >
-                  Cargo
-                </label>
-
-                <select
-                  class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
-                >
-                  <option>Seleccionar cargo</option>
-                  <option>CEO / Director General</option>
-                  <option>COO / Director Operaciones</option>
-                  <option>CTO / Director Tecnología</option>
-                  <option>Director RRHH</option>
-                  <option>Director Marketing</option>
-                </select>
-              </div>
-
-              <!-- BUTTONS -->
-              <div
-                class="flex flex-wrap items-center justify-between gap-4 border-t border-amber/20 pt-8"
-              >
-                <div></div>
-
+              <div class="mt-10 flex flex-wrap items-center justify-end gap-4 border-t border-amber/20 pt-8">
                 <button
+                  id="step1-next"
                   type="button"
                   class="bg-amber px-8 py-4 text-sm font-medium tracking-[0.06em] text-black transition hover:bg-amber-light"
                 >
-                  Continuar →
+                  Continuar ->
                 </button>
               </div>
-            </form>
-          </div>
+            </div>
 
-          <!-- STEP 2 PREVIEW -->
-          <div class="mt-20 border-t border-amber/20 pt-16">
+            <div data-step-panel="2" class="hidden border-t border-amber/20 pt-10">
+              <h2 class="font-serif text-4xl font-light text-paper">Datos de la empresa</h2>
+              <p class="mt-3 text-sm leading-7 text-mist">
+                Cuentanos sobre tu organizacion para personalizar la propuesta.
+              </p>
 
-            <h2 class="font-serif text-4xl font-light text-paper">
-              Datos de la empresa
-            </h2>
+              <fieldset class="mt-10 space-y-8">
+                <legend class="sr-only">Informacion de la empresa</legend>
 
-            <p class="mt-3 text-sm leading-7 text-mist">
-              Cuéntanos sobre tu organización para personalizar
-              la propuesta.
-            </p>
+                <div class="space-y-2">
+                  <label for="company-name" class="text-xs uppercase tracking-[0.1em] text-mist">
+                    Nombre de la empresa
+                  </label>
+                  <input
+                    id="company-name"
+                    name="companyName"
+                    type="text"
+                    autocomplete="organization"
+                    required
+                    placeholder="Acme Corp"
+                    class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
+                  />
+                </div>
 
-            <div class="mt-10 space-y-8">
+                <div class="grid gap-6 sm:grid-cols-2">
+                  <div class="space-y-2">
+                    <label for="industry" class="text-xs uppercase tracking-[0.1em] text-mist">
+                      Sector
+                    </label>
+                    <select
+                      id="industry"
+                      name="industry"
+                      required
+                      class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
+                    >
+                      <option value="">Seleccionar sector</option>
+                      <option value="tecnologia">Tecnologia</option>
+                      <option value="retail">Retail</option>
+                      <option value="servicios-financieros">Servicios financieros</option>
+                    </select>
+                  </div>
 
-              <div class="space-y-2">
-                <label
-                  class="text-xs uppercase tracking-[0.1em] text-mist"
+                  <div class="space-y-2">
+                    <label for="country" class="text-xs uppercase tracking-[0.1em] text-mist">
+                      Pais
+                    </label>
+                    <select
+                      id="country"
+                      name="country"
+                      required
+                      class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
+                    >
+                      <option value="">Seleccionar pais</option>
+                      <option value="espana">Espana</option>
+                      <option value="estados-unidos">Estados Unidos</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-amber/20 pt-8">
+                <button
+                  id="step2-prev"
+                  type="button"
+                  class="border border-amber/20 px-6 py-4 text-sm tracking-[0.04em] text-mist transition hover:border-mist hover:text-paper"
                 >
-                  Nombre de la empresa
+                  <- Anterior
+                </button>
+
+                <button
+                  id="step2-next"
+                  type="button"
+                  class="bg-amber px-8 py-4 text-sm font-medium tracking-[0.06em] text-black transition hover:bg-amber-light"
+                >
+                  Continuar ->
+                </button>
+              </div>
+            </div>
+
+            <div data-step-panel="3" class="hidden border-t border-amber/20 pt-10">
+              <h2 class="font-serif text-4xl font-light text-paper">Tus necesidades</h2>
+
+              <p class="mt-3 text-sm leading-7 text-mist">
+                Selecciona las areas en las que quieres trabajar.
+              </p>
+
+              <fieldset class="mt-10" aria-describedby="services-error">
+                <legend class="text-xs uppercase tracking-[0.1em] text-mist mb-4">
+                  Servicios prioritarios
+                </legend>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <label
+                    class="flex items-center gap-3 border border-amber/20 bg-field px-4 py-4 text-sm text-mist transition hover:border-amber hover:text-paper"
+                  >
+                    <input type="checkbox" name="serviceNeeds" value="reclutamiento" class="accent-amber" />
+                    Reclutamiento
+                  </label>
+
+                  <label
+                    class="flex items-center gap-3 border border-amber/20 bg-field px-4 py-4 text-sm text-mist transition hover:border-amber hover:text-paper"
+                  >
+                    <input type="checkbox" name="serviceNeeds" value="automatizacion-ia" class="accent-amber" />
+                    Automatizacion IA
+                  </label>
+
+                  <label
+                    class="flex items-center gap-3 border border-amber/20 bg-field px-4 py-4 text-sm text-mist transition hover:border-amber hover:text-paper"
+                  >
+                    <input type="checkbox" name="serviceNeeds" value="dashboards" class="accent-amber" />
+                    Dashboards
+                  </label>
+
+                  <label
+                    class="flex items-center gap-3 border border-amber/20 bg-field px-4 py-4 text-sm text-mist transition hover:border-amber hover:text-paper"
+                  >
+                    <input type="checkbox" name="serviceNeeds" value="formacion-corporativa" class="accent-amber" />
+                    Formacion corporativa
+                  </label>
+                </div>
+
+                <p id="services-error" class="hidden mt-2 text-xs text-error" role="alert" aria-live="assertive"></p>
+              </fieldset>
+
+              <div class="mt-10 space-y-2">
+                <label for="project-details" class="text-xs uppercase tracking-[0.1em] text-mist">
+                  Cuentanos mas sobre tu proyecto
                 </label>
 
-                <input
-                  type="text"
-                  placeholder="Acme Corp"
+                <textarea
+                  id="project-details"
+                  name="projectDetails"
+                  rows="5"
+                  minlength="20"
+                  required
+                  placeholder="Describe brevemente el principal problema que quieres resolver..."
                   class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
-                />
+                ></textarea>
               </div>
 
-              <div class="grid gap-6 sm:grid-cols-2">
+              <div class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-amber/20 pt-8">
+                <button
+                  id="step3-prev"
+                  type="button"
+                  class="border border-amber/20 px-6 py-4 text-sm tracking-[0.04em] text-mist transition hover:border-mist hover:text-paper"
+                >
+                  <- Anterior
+                </button>
 
-                <div class="space-y-2">
-                  <label
-                    class="text-xs uppercase tracking-[0.1em] text-mist"
+                <div class="flex flex-wrap items-center gap-4">
+                  <button
+                    type="reset"
+                    class="border border-amber/20 px-6 py-4 text-sm tracking-[0.04em] text-mist transition hover:border-mist hover:text-paper"
                   >
-                    Sector
-                  </label>
+                    Limpiar formulario
+                  </button>
 
-                  <select
-                    class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
+                  <button
+                    type="submit"
+                    class="bg-amber px-8 py-4 text-sm font-medium tracking-[0.06em] text-black transition hover:bg-amber-light"
                   >
-                    <option>Tecnología</option>
-                  </select>
-                </div>
-
-                <div class="space-y-2">
-                  <label
-                    class="text-xs uppercase tracking-[0.1em] text-mist"
-                  >
-                    País
-                  </label>
-
-                  <select
-                    class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
-                  >
-                    <option>España</option>
-                  </select>
+                    Enviar solicitud ->
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
 
-          <!-- STEP 3 -->
-          <div class="mt-20 border-t border-amber/20 pt-16">
-
-            <h2 class="font-serif text-4xl font-light text-paper">
-              Tus necesidades
-            </h2>
-
-            <p class="mt-3 text-sm leading-7 text-mist">
-              Selecciona las áreas en las que quieres trabajar.
-            </p>
-
-            <div class="mt-10 grid gap-4 sm:grid-cols-2">
-
-              <label
-                class="flex items-center gap-3 border border-amber/20 bg-field px-4 py-4 text-sm text-mist transition hover:border-amber hover:text-paper"
-              >
-                <input type="checkbox" class="accent-amber" />
-                Reclutamiento
-              </label>
-
-              <label
-                class="flex items-center gap-3 border border-amber/20 bg-field px-4 py-4 text-sm text-mist transition hover:border-amber hover:text-paper"
-              >
-                <input type="checkbox" class="accent-amber" />
-                Automatización IA
-              </label>
-
-              <label
-                class="flex items-center gap-3 border border-amber/20 bg-field px-4 py-4 text-sm text-mist transition hover:border-amber hover:text-paper"
-              >
-                <input type="checkbox" class="accent-amber" />
-                Dashboards
-              </label>
-
-              <label
-                class="flex items-center gap-3 border border-amber/20 bg-field px-4 py-4 text-sm text-mist transition hover:border-amber hover:text-paper"
-              >
-                <input type="checkbox" class="accent-amber" />
-                Formación corporativa
-              </label>
-            </div>
-
-            <div class="mt-10 space-y-2">
-              <label
-                class="text-xs uppercase tracking-[0.1em] text-mist"
-              >
-                Cuéntanos más sobre tu proyecto
-              </label>
-
-              <textarea
-                rows="5"
-                placeholder="Describe brevemente el principal problema que quieres resolver..."
-                class="w-full border border-amber/20 bg-field px-4 py-4 text-sm text-paper outline-none transition focus:border-amber"
-              ></textarea>
-            </div>
-
-            <div
-              class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-amber/20 pt-8"
-            >
-              <button
-                type="button"
-                class="border border-amber/20 px-6 py-4 text-sm tracking-[0.04em] text-mist transition hover:border-mist hover:text-paper"
-              >
-                ← Anterior
-              </button>
-
-              <button
-                type="submit"
-                class="bg-amber px-8 py-4 text-sm font-medium tracking-[0.06em] text-black transition hover:bg-amber-light"
-              >
-                Enviar solicitud →
-              </button>
+          <div id="success-screen" class="hidden items-center justify-center border-t border-amber/20 pt-12" role="status" aria-live="polite">
+            <div class="w-full rounded border border-amber/25 bg-black/30 p-8 text-center">
+              <p class="text-amber text-sm tracking-[0.14em] uppercase">Solicitud enviada</p>
+              <h3 class="mt-3 font-serif text-4xl font-light">Gracias por contactarnos</h3>
+              <p class="mt-4 text-sm leading-7 text-mist">
+                Un consultor de Nexova se pondra en contacto contigo en menos de 48 horas.
+              </p>
             </div>
           </div>
-
         </div>
       </section>
     </main>
-  <script src="validation.js"></script>
+
+    <script src="validation.js"></script>
   </body>
 </html>
