@@ -1,327 +1,663 @@
 <!doctype html>
 <html lang="es" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexova Solutions | Reclutamiento, Outsourcing y Transformacion Digital con IA</title>
-    <meta
-      name="description"
-      content="Nexova Solutions impulsa el reclutamiento especializado, outsourcing de soporte al cliente, formacion corporativa y automatizacion con IA para empresas de tecnologia, retail y finanzas."
-    />
-    <meta
-      name="keywords"
-      content="Nexova Solutions, reclutamiento, headhunting, outsourcing, soporte al cliente, automatizacion, inteligencia artificial, formacion corporativa, transformacion digital"
-    />
-    <meta name="author" content="Nexova Solutions" />
-    <meta name="robots" content="index, follow" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_ES" />
-    <meta
-      property="og:title"
-      content="Nexova Solutions | Talento, Soporte y Transformacion Digital"
-    />
-    <meta
-      property="og:description"
-      content="Externaliza procesos clave de talento y soporte con Nexova y acelera resultados con automatizacion e IA aplicada al negocio."
-    />
-    <meta property="og:url" content="https://www.nexovasolutions.com/" />
-    <meta property="og:site_name" content="Nexova Solutions" />
-    <meta
-      property="og:image"
-      content="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&h=630&q=80"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Equipo ejecutivo revisando indicadores de transformacion digital en una sala de reuniones" />
+  <title>Nexova Solutions</title>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Nexova Solutions" />
-    <meta
-      name="twitter:description"
-      content="Consultora de talento, outsourcing y formacion corporativa con foco en IA y escalabilidad operacional."
-    />
-    <meta
-      name="twitter:image"
-      content="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&h=630&q=80"
-    />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="canonical" href="https://www.nexovasolutions.com/" />
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Nexova Solutions",
-        "url": "https://www.nexovasolutions.com/",
-        "description": "Consultora de recursos humanos, outsourcing de soporte al cliente y formacion corporativa para empresas de tecnologia, retail y finanzas.",
-        "foundingDate": "2011",
-        "numberOfEmployees": 120,
-        "address": [
-          {
-            "@type": "PostalAddress",
-            "addressLocality": "Valencia",
-            "addressCountry": "ES"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#0a0a0a",
+            paper: "#f5f0e8",
+            amber: {
+              DEFAULT: "#c8922a",
+              light: "#e8b84b",
+              pale: "#f5e6c0",
+            },
+            stone: "#2a2520",
+            mist: "#8a847a",
+            rule: "rgba(200,146,42,0.25)",
           },
-          {
-            "@type": "PostalAddress",
-            "addressLocality": "Miami",
-            "addressCountry": "US"
-          }
-        ],
-        "department": [
-          "Operaciones de Seleccion",
-          "Soporte al Cliente Externalizado",
-          "Formacion Corporativa"
-        ],
-        "areaServed": ["ES", "US"]
-      }
-    </script>
-  </head>
-  <body class="bg-slate-950 text-slate-100 antialiased">
+
+          fontFamily: {
+            serif: ["Cormorant Garamond", "serif"],
+            sans: ["DM Sans", "sans-serif"],
+          },
+
+          keyframes: {
+            fadeUp: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(20px)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)",
+              },
+            },
+
+            imgReveal: {
+              "0%": {
+                opacity: "0",
+                transform: "scale(1.04)",
+              },
+              "100%": {
+                opacity: "1",
+                transform: "scale(1)",
+              },
+            },
+
+            marquee: {
+              from: {
+                transform: "translateX(0)",
+              },
+              to: {
+                transform: "translateX(-50%)",
+              },
+            },
+
+            scrollPulse: {
+              "0%,100%": {
+                opacity: ".4",
+                transform: "scaleY(1)",
+              },
+              "50%": {
+                opacity: "1",
+                transform: "scaleY(1.2)",
+              },
+            },
+          },
+
+          animation: {
+            "fade-up": "fadeUp .8s ease forwards",
+            "img-reveal": "imgReveal 1.2s ease forwards",
+            marquee: "marquee 28s linear infinite",
+            "scroll-pulse": "scrollPulse 2s ease infinite",
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-ink text-paper font-sans overflow-x-hidden cursor-none">
+
+  <!-- Cursor -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-ring" class="cursor-ring"></div>
+
+  <!-- HEADER -->
+  <header
+    id="site-header"
+    class="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex items-center justify-between transition-all duration-300"
+  >
     <a
-      href="#contenido-principal"
-      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-cyan-400 focus:px-4 focus:py-2 focus:text-slate-950"
-      >Saltar al contenido principal</a
+      href="#inicio"
+      class="flex items-center gap-2 font-serif text-xl tracking-[.08em]"
+    >
+      <span class="w-1.5 h-1.5 rounded-full bg-amber"></span>
+      Nexova Solutions
+    </a>
+
+    <nav class="hidden md:flex items-center gap-10">
+      <a href="#servicios" class="text-xs uppercase tracking-[.18em] text-mist hover:text-paper transition">
+        Servicios
+      </a>
+
+      <a href="#automatizacion" class="text-xs uppercase tracking-[.18em] text-mist hover:text-paper transition">
+        Automatización
+      </a>
+
+      <a href="#impacto" class="text-xs uppercase tracking-[.18em] text-mist hover:text-paper transition">
+        Impacto
+      </a>
+
+      <a
+        href="application.html"
+        class="bg-amber hover:bg-amber-light text-ink text-xs uppercase tracking-[.14em] px-6 py-3 transition"
+      >
+        Solicitar diagnóstico
+      </a>
+    </nav>
+
+    <!-- Mobile -->
+    <button
+      id="menu-toggle"
+      class="md:hidden border border-rule px-4 py-2"
+    >
+      ☰
+    </button>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div
+    id="mobile-nav"
+    class="fixed inset-0 bg-black/95 z-[60] hidden flex-col items-center justify-center gap-10"
+  >
+    <button
+      id="close-menu"
+      class="absolute top-8 right-8 text-3xl text-mist"
+    >
+      ×
+    </button>
+
+    <a href="#servicios" class="font-serif text-5xl">Servicios</a>
+    <a href="#automatizacion" class="font-serif text-5xl">Automatización</a>
+    <a href="#impacto" class="font-serif text-5xl">Impacto</a>
+    <a
+      href="application.html"
+      class="bg-amber hover:bg-amber-light text-ink text-xs uppercase tracking-[.14em] px-6 py-3 transition"
+    >
+      Solicitar diagnóstico
+    </a>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section
+      id="inicio"
+      class="min-h-screen grid lg:grid-cols-2 relative pt-14"
     >
 
-    <header class="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/90 backdrop-blur" aria-label="Cabecera principal">
-      <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#inicio" class="text-lg font-semibold tracking-tight text-white" aria-label="Ir al inicio de Nexova Solutions">
-          Nexova Solutions
-        </a>
+      <!-- LEFT -->
+      <div class="flex flex-col justify-center px-8 sm:px-12 lg:px-20 py-20 relative z-10">
 
-        <button
-          id="menu-toggle"
-          class="inline-flex items-center rounded-md border border-slate-700 px-3 py-2 text-sm font-medium text-slate-200 hover:border-cyan-300 hover:text-cyan-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 md:hidden"
-          aria-label="Abrir menu de navegacion"
-          aria-controls="primary-nav"
-          aria-expanded="false"
-          type="button"
+        <p class="uppercase tracking-[.22em] text-[11px] text-amber mb-8 animate-fade-up">
+          AI Engineering para operaciones reales
+        </p>
+
+        <h1
+          class="font-serif text-[clamp(3rem,4vw,6rem)] leading-[.95] font-light max-w-3xl animate-fade-up"
+          style="animation-delay:.15s"
         >
-          <span class="sr-only">Menu</span>
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-            <path d="M4 7h16" />
-            <path d="M4 12h16" />
-            <path d="M4 17h16" />
-          </svg>
-        </button>
+          Talento, soporte y
+          <em class="italic text-amber">decisiones</em>
+          que escalan
+        </h1>
 
-        <nav
-          id="primary-nav"
-          class="hidden flex-col gap-5 text-sm font-medium text-slate-200 md:flex md:flex-row md:items-center"
-          aria-label="Navegacion principal"
+        <p
+          class="mt-8 text-mist leading-8 max-w-xl animate-fade-up"
+          style="animation-delay:.3s"
         >
-          <a href="#servicios" class="hover:text-cyan-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Servicios</a>
-          <a href="#automatizacion-ia" class="hover:text-cyan-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Automatizacion e IA</a>
-          <a href="#impacto" class="hover:text-cyan-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">Impacto</a>
-          <a href="#contacto" class="rounded-md bg-cyan-400 px-4 py-2 text-slate-900 hover:bg-cyan-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
-            >Solicitar diagnostico</a
-          >
-        </nav>
-      </div>
-      <nav id="mobile-nav" class="hidden border-t border-slate-800 px-4 py-4 md:hidden" aria-label="Navegacion movil">
-        <ul class="flex flex-col gap-3 text-sm font-medium text-slate-200">
-          <li><a href="#servicios" class="block rounded px-2 py-1 hover:bg-slate-800">Servicios</a></li>
-          <li><a href="#automatizacion-ia" class="block rounded px-2 py-1 hover:bg-slate-800">Automatizacion e IA</a></li>
-          <li><a href="#impacto" class="block rounded px-2 py-1 hover:bg-slate-800">Impacto</a></li>
-          <li><a href="#contacto" class="block rounded bg-cyan-400 px-3 py-2 text-center font-semibold text-slate-900">Solicitar diagnostico</a></li>
-        </ul>
-      </nav>
-    </header>
+          En Nexova integramos reclutamiento especializado,
+          outsourcing de soporte y automatización con IA
+          para acelerar operaciones críticas.
+        </p>
 
-    <main id="contenido-principal">
-      <section id="inicio" class="relative isolate overflow-hidden">
-        <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,#0e7490_0%,#020617_45%,#020617_100%)]" aria-hidden="true"></div>
-        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
-          <div>
-            <p class="mb-4 inline-flex rounded-full border border-cyan-300/40 bg-cyan-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-200">
-              AI Engineering para operaciones reales
-            </p>
-            <h1 class="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-              Convierte operaciones intensivas en esfuerzo manual en sistemas escalables de alto rendimiento
-            </h1>
-            <p class="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
-              En Nexova integramos reclutamiento, outsourcing de soporte al cliente, formacion corporativa y automatizacion con IA para que tu organizacion reduzca tiempos de respuesta, mejore conversiones y tome decisiones con datos en tiempo real.
-            </p>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="application.html" class="inline-flex items-center justify-center rounded-md bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-cyan-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200">
-                Iniciar solicitud de servicio
-              </a>
-              <a href="#servicios" class="inline-flex items-center justify-center rounded-md border border-slate-600 px-5 py-3 text-sm font-semibold text-slate-100 hover:border-cyan-300 hover:text-cyan-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
-                Explorar capacidades
-              </a>
-            </div>
-          </div>
-
-          <aside class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 shadow-2xl shadow-cyan-950/30" aria-label="Indicadores de contexto operativo">
-            <figure class="overflow-hidden rounded-xl border border-slate-700">
-              <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&h=760&q=80"
-                alt="Equipo de direccion analizando paneles de rendimiento y estrategia de transformacion digital"
-                width="1200"
-                height="760"
-                decoding="async"
-                fetchpriority="high"
-                class="h-44 w-full object-cover"
-              />
-            </figure>
-            <h2 class="text-lg font-semibold text-white">Panorama operativo en empresas similares</h2>
-            <ul class="mt-5 space-y-4 text-sm text-slate-300">
-              <li class="rounded-lg bg-slate-800/70 p-4">
-                <p class="font-semibold text-cyan-200">Soporte externalizado</p>
-                <p>48h de resolucion media frente a un SLA de 24h sin monitorizacion centralizada.</p>
-              </li>
-              <li class="rounded-lg bg-slate-800/70 p-4">
-                <p class="font-semibold text-cyan-200">Reclutamiento manual</p>
-                <p>Consultores revisando entre 30 y 80 CVs por proceso sin scoring automatizado.</p>
-              </li>
-              <li class="rounded-lg bg-slate-800/70 p-4">
-                <p class="font-semibold text-cyan-200">Decision ejecutiva tardia</p>
-                <p>Informes semanales en PDF que llegan con varios dias de retraso.</p>
-              </li>
-            </ul>
-          </aside>
-        </div>
-      </section>
-
-      <section id="servicios" class="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20" aria-labelledby="titulo-servicios">
-        <div class="mb-10 max-w-3xl">
-          <h2 id="titulo-servicios" class="text-2xl font-bold text-white sm:text-3xl">Servicios clave para talento y operaciones B2B</h2>
-          <p class="mt-4 text-slate-300">
-            Diseñamos soluciones adaptadas a equipos de tecnologia, retail y servicios financieros que necesitan escalar sin sacrificar control ni calidad operativa.
-          </p>
-        </div>
-        <figure class="mb-8 overflow-hidden rounded-xl border border-slate-800">
-          <img
-            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&h=700&q=80"
-            alt="Equipo corporativo colaborando entre operaciones de reclutamiento, soporte y analitica de negocio"
-            width="1600"
-            height="700"
-            loading="lazy"
-            decoding="async"
-            class="h-52 w-full object-cover sm:h-64"
-          />
-        </figure>
-        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          <article class="rounded-xl border border-slate-800 bg-slate-900 p-6">
-            <h3 class="text-lg font-semibold text-cyan-200">Reclutamiento y Headhunting</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-300">Pipeline asistido por IA con ranking de perfiles, seguimiento de candidatos y visibilidad para cliente en tiempo real.</p>
-          </article>
-          <article class="rounded-xl border border-slate-800 bg-slate-900 p-6">
-            <h3 class="text-lg font-semibold text-cyan-200">Outsourcing de Soporte al Cliente</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-300">Equipos de atencion omnicanal con estandar de calidad, trazabilidad y foco en cumplimiento de SLA.</p>
-          </article>
-          <article class="rounded-xl border border-slate-800 bg-slate-900 p-6">
-            <h3 class="text-lg font-semibold text-cyan-200">Formacion Corporativa</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-300">Programas de liderazgo, comunicacion y gestion de equipos con rutas recomendadas por perfil organizacional.</p>
-          </article>
-          <article class="rounded-xl border border-slate-800 bg-slate-900 p-6">
-            <h3 class="text-lg font-semibold text-cyan-200">Automatizacion de Flujos Comerciales</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-300">Secuencias de prospeccion automatizadas, alertas de inactividad y priorizacion inteligente de oportunidades.</p>
-          </article>
-          <article class="rounded-xl border border-slate-800 bg-slate-900 p-6">
-            <h3 class="text-lg font-semibold text-cyan-200">Plataformas de RRHH Interno</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-300">Onboarding digital, gestion de solicitudes y paneles de KPIs para reducir carga administrativa de RRHH.</p>
-          </article>
-          <article class="rounded-xl border border-slate-800 bg-slate-900 p-6">
-            <h3 class="text-lg font-semibold text-cyan-200">Dashboards Ejecutivos Unificados</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-300">Informacion en tiempo real para decisiones estrategicas con indicadores transversales por area de negocio.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="automatizacion-ia" class="border-y border-slate-800 bg-slate-900/60 py-14 sm:py-20" aria-labelledby="titulo-ia">
-        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
-          <div>
-            <h2 id="titulo-ia" class="text-2xl font-bold text-white sm:text-3xl">Automatizacion e IA aplicada a procesos criticos</h2>
-            <p class="mt-4 text-slate-300">
-              Integramos agentes, RAG y analitica operacional para convertir cuellos de botella en ciclos predecibles de mejora continua.
-            </p>
-            <ul class="mt-6 space-y-3 text-sm text-slate-200">
-              <li class="rounded-lg border border-slate-700 bg-slate-800/70 p-4">Scoring explicable de CVs y busqueda semantica sobre base de candidatos.</li>
-              <li class="rounded-lg border border-slate-700 bg-slate-800/70 p-4">Chatbot de primera linea para resolver hasta el 40% de consultas frecuentes.</li>
-              <li class="rounded-lg border border-slate-700 bg-slate-800/70 p-4">Analisis de sentimiento de tickets para anticipar escalaciones de clientes.</li>
-              <li class="rounded-lg border border-slate-700 bg-slate-800/70 p-4">Asistente ejecutivo en lenguaje natural con alertas de umbrales estrategicos.</li>
-            </ul>
-          </div>
-          <div class="rounded-2xl border border-cyan-900/50 bg-gradient-to-br from-cyan-900/30 to-slate-950 p-6" role="img" aria-label="Mapa de transformacion digital de Nexova">
-            <figure class="mb-5 overflow-hidden rounded-xl border border-slate-700">
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=780&q=80"
-                alt="Dashboard de analitica empresarial con indicadores operativos y seguimiento de rendimiento"
-                width="1200"
-                height="780"
-                loading="lazy"
-                decoding="async"
-                class="h-40 w-full object-cover"
-              />
-            </figure>
-            <h3 class="text-lg font-semibold text-cyan-100">Ruta de transformacion digital</h3>
-            <ol class="mt-5 space-y-4 text-sm text-slate-200">
-              <li><span class="font-semibold text-cyan-200">Fase 1:</span> Diagnostico de procesos y arquitectura de datos.</li>
-              <li><span class="font-semibold text-cyan-200">Fase 2:</span> Integraciones core entre CRM, ATS, soporte y reporting.</li>
-              <li><span class="font-semibold text-cyan-200">Fase 3:</span> Despliegue de automatizaciones con agentes de IA especializados.</li>
-              <li><span class="font-semibold text-cyan-200">Fase 4:</span> Gobernanza de KPIs, mejora continua y escalado internacional.</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section id="impacto" class="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20" aria-labelledby="titulo-impacto">
-        <h2 id="titulo-impacto" class="text-2xl font-bold text-white sm:text-3xl">Beneficios operativos para equipos de direccion</h2>
-        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="rounded-xl border border-slate-800 bg-slate-900 p-5">
-            <p class="text-2xl font-bold text-cyan-200">+Visibilidad</p>
-            <p class="mt-2 text-sm text-slate-300">Estado de seleccion, soporte y ventas en tableros actualizados en tiempo real.</p>
-          </article>
-          <article class="rounded-xl border border-slate-800 bg-slate-900 p-5">
-            <p class="text-2xl font-bold text-cyan-200">-Carga Manual</p>
-            <p class="mt-2 text-sm text-slate-300">Automatizamos tareas repetitivas para liberar tiempo de equipos especialistas.</p>
-          </article>
-          <article class="rounded-xl border border-slate-800 bg-slate-900 p-5">
-            <p class="text-2xl font-bold text-cyan-200">+Velocidad</p>
-            <p class="mt-2 text-sm text-slate-300">Menor tiempo de respuesta a clientes y ciclos mas cortos de decision operativa.</p>
-          </article>
-          <article class="rounded-xl border border-slate-800 bg-slate-900 p-5">
-            <p class="text-2xl font-bold text-cyan-200">+Escalabilidad</p>
-            <p class="mt-2 text-sm text-slate-300">Procesos estandarizados para crecer sin perder calidad de servicio.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="contacto" class="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24" aria-labelledby="titulo-cta">
-        <div class="mx-auto max-w-5xl rounded-2xl border border-cyan-900/50 bg-gradient-to-r from-cyan-500/15 via-slate-900 to-slate-900 p-8 sm:p-10">
-          <h2 id="titulo-cta" class="text-2xl font-bold text-white sm:text-3xl">Activa tu diagnostico operativo con Nexova</h2>
-          <p class="mt-4 max-w-3xl text-slate-300">
-            Comparte tus objetivos de reclutamiento, soporte, formacion y automatizacion. Nuestro equipo define una hoja de ruta priorizada para reducir fricciones, acelerar resultados y habilitar crecimiento sostenible.
-          </p>
+        <div
+          class="flex flex-wrap gap-4 mt-10 animate-fade-up"
+          style="animation-delay:.45s"
+        >
           <a
             href="application.html"
-            class="mt-7 inline-flex items-center justify-center rounded-md bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-cyan-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
-            >Ir al formulario de solicitud</a
+            class="bg-amber hover:bg-amber-light text-ink px-8 py-4 text-xs uppercase tracking-[.18em] transition"
           >
+            Iniciar solicitud →
+          </a>
+
+          <a
+            href="#servicios"
+            class="border border-amber/40 hover:border-amber text-amber px-8 py-4 text-xs uppercase tracking-[.18em] transition"
+          >
+            Explorar capacidades
+          </a>
         </div>
-      </section>
-    </main>
 
-    <footer class="border-t border-slate-800 bg-slate-950" aria-label="Pie de pagina">
-      <div class="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-8 text-sm text-slate-400 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <p>&copy; 2026 Nexova Solutions. AI Engineering para transformacion digital empresarial.</p>
-        <p>Valencia, Espana · Miami, Florida</p>
+        <!-- Stats -->
+        <div
+          class="flex flex-wrap gap-14 mt-16 pt-10 border-t border-rule animate-fade-up"
+          style="animation-delay:.6s"
+        >
+
+          <div>
+            <span class="font-serif text-5xl">12+</span>
+            <p class="text-xs uppercase tracking-[.18em] text-mist mt-2">
+              Años de experiencia
+            </p>
+          </div>
+
+          <div>
+            <span class="font-serif text-5xl">120</span>
+            <p class="text-xs uppercase tracking-[.18em] text-mist mt-2">
+              Especialistas
+            </p>
+          </div>
+
+          <div>
+            <span class="font-serif text-5xl">2</span>
+            <p class="text-xs uppercase tracking-[.18em] text-mist mt-2">
+              Países
+            </p>
+          </div>
+
+        </div>
       </div>
-    </footer>
 
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const mobileNav = document.getElementById("mobile-nav");
+      <!-- RIGHT -->
+      <div class="relative min-h-[50vh] lg:min-h-screen overflow-hidden">
 
-      menuToggle?.addEventListener("click", () => {
-        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-        menuToggle.setAttribute("aria-expanded", String(!isExpanded));
-        mobileNav.classList.toggle("hidden");
+        <img
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
+          class="absolute inset-0 w-full h-full object-cover opacity-0 animate-img-reveal saturate-[.7]"
+          alt=""
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-ink via-transparent to-transparent"
+        ></div>
+
+        <div
+          class="absolute bottom-40 right-8 bg-black/80 border border-rule backdrop-blur-md p-6 max-w-xs"
+        >
+          <p class="uppercase tracking-[.18em] text-[11px] text-amber mb-3">
+            Reto habitual
+          </p>
+
+          <p class="text-sm leading-6 text-paper">
+            Informes semanales que llegan con 5 días
+            de retraso. Nexova lo resuelve en tiempo real.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="border-y border-rule py-5 overflow-hidden bg-stone">
+      <div class="flex gap-16 whitespace-nowrap animate-marquee w-max">
+
+        <span class="font-serif text-xl text-mist">Reclutamiento especializado</span>
+        <span class="font-serif text-xl text-mist">Outsourcing de soporte</span>
+        <span class="font-serif text-xl text-mist">Automatización IA</span>
+        <span class="font-serif text-xl text-mist">Dashboards ejecutivos</span>
+
+        <span class="font-serif text-xl text-mist">Reclutamiento especializado</span>
+        <span class="font-serif text-xl text-mist">Outsourcing de soporte</span>
+        <span class="font-serif text-xl text-mist">Automatización IA</span>
+        <span class="font-serif text-xl text-mist">Dashboards ejecutivos</span>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section
+      id="servicios"
+      class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-28"
+    >
+
+      <div class="grid md:grid-cols-2 gap-10 mb-20 reveal">
+
+        <div>
+          <p class="uppercase tracking-[.22em] text-[11px] text-amber mb-6">
+            Capacidades
+          </p>
+
+          <h2 class="font-serif text-[clamp(2.5rem,5vw,5rem)] leading-none font-light">
+            Lo que
+            <em class="italic text-amber">construimos</em>
+            para ti
+          </h2>
+        </div>
+
+        <p class="text-mist leading-8 self-end">
+          Soluciones para empresas que necesitan escalar
+          operaciones sin perder control ni velocidad.
+        </p>
+
+      </div>
+
+      <!-- Cards -->
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 border border-rule bg-rule gap-px">
+
+        <!-- CARD -->
+        <article class="bg-ink p-10 hover:bg-stone transition reveal">
+          <span class="font-serif text-6xl text-amber/20">01</span>
+
+          <h3 class="mt-8 text-lg font-medium">
+            Reclutamiento y Headhunting
+          </h3>
+
+          <p class="mt-5 text-sm leading-7 text-mist">
+            Pipeline asistido por IA con scoring automático
+            y visibilidad completa del proceso.
+          </p>
+        </article>
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-1">
+          <span class="font-serif text-6xl text-amber/20">02</span>
+
+          <h3 class="mt-8 text-lg font-medium">
+            Outsourcing de Soporte
+          </h3>
+
+          <p class="mt-5 text-sm leading-7 text-mist">
+            Atención omnicanal con SLA reales y análisis
+            de sentimiento automatizado.
+          </p>
+        </article>
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-2">
+          <span class="font-serif text-6xl text-amber/20">03</span>
+
+          <h3 class="mt-8 text-lg font-medium">
+            Dashboards Ejecutivos
+          </h3>
+
+          <p class="mt-5 text-sm leading-7 text-mist">
+            KPIs en tiempo real con alertas inteligentes
+            y decisiones basadas en datos.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- IA -->
+    <section
+      id="automatizacion"
+      class="bg-stone py-28 px-8 sm:px-12 lg:px-20 relative overflow-hidden"
+    >
+
+      <div
+        class="absolute right-[-3rem] top-1/2 -translate-y-1/2 font-serif text-[20rem] text-amber/[.03] leading-none select-none"
+      >
+        IA
+      </div>
+
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+
+        <div class="relative aspect-[4/3] overflow-hidden reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+            class="w-full h-full object-cover saturate-[.7]"
+            alt=""
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-amber/20 to-transparent"
+          ></div>
+        </div>
+
+        <div>
+
+          <div class="reveal">
+            <p class="uppercase tracking-[.22em] text-[11px] text-amber mb-6">
+              Automatización
+            </p>
+
+            <h2 class="font-serif text-[clamp(2.5rem,5vw,5rem)] leading-none font-light">
+              Procesos críticos
+              <em class="italic text-amber">sin fricción</em>
+            </h2>
+
+            <p class="mt-8 text-mist leading-8">
+              Integramos agentes, dashboards y automatizaciones
+              para transformar cuellos de botella en flujos
+              operativos escalables.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section
+      id="impacto"
+      class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-28"
+    >
+
+      <div class="grid md:grid-cols-2 gap-10 mb-20 reveal">
+
+        <div>
+          <p class="uppercase tracking-[.22em] text-[11px] text-amber mb-6">
+            Resultados
+          </p>
+
+          <h2 class="font-serif text-[clamp(2.5rem,5vw,5rem)] leading-none font-light">
+            Beneficios para
+            <em class="italic text-amber">dirección</em>
+          </h2>
+        </div>
+
+        <p class="text-mist leading-8 self-end">
+          Métricas concretas que permiten escalar operaciones
+          con mejor visibilidad, menor carga manual y decisiones
+          ejecutivas más rápidas.
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 border border-rule bg-rule gap-px">
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal">
+          <p class="font-serif text-5xl text-amber leading-none">+Visibilidad</p>
+
+          <h3 class="mt-6 text-base font-medium">
+            Operaciones en tiempo real
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-mist">
+            Estado de selección, soporte y ventas en tableros actualizados al momento.
+          </p>
+        </article>
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-1">
+          <p class="font-serif text-5xl text-amber leading-none">-Carga</p>
+
+          <h3 class="mt-6 text-base font-medium">
+            Automatización de tareas
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-mist">
+            Menos trabajo repetitivo para que los equipos se enfoquen en tareas de alto valor.
+          </p>
+        </article>
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-2">
+          <p class="font-serif text-5xl text-amber leading-none">+Velocidad</p>
+
+          <h3 class="mt-6 text-base font-medium">
+            Ciclos de decisión más cortos
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-mist">
+            Datos en tiempo real para responder antes a clientes y prioridades operativas.
+          </p>
+        </article>
+
+        <article class="bg-ink p-10 hover:bg-stone transition reveal delay-3">
+          <p class="font-serif text-5xl text-amber leading-none">+Escala</p>
+
+          <h3 class="mt-6 text-base font-medium">
+            Crecimiento sin fricciones
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-mist">
+            Procesos estandarizados que mantienen calidad de servicio al aumentar volumen.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section
+      id="contacto"
+      class="py-32 px-8 text-center relative overflow-hidden"
+    >
+
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle,rgba(200,146,42,.08)_0%,transparent_70%)]"
+      ></div>
+
+      <div class="max-w-4xl mx-auto relative z-10 reveal">
+
+        <p class="uppercase tracking-[.22em] text-[11px] text-amber mb-8">
+          Próximo paso
+        </p>
+
+        <h2 class="font-serif text-[clamp(3rem,6vw,6rem)] leading-none font-light">
+          Activa tu diagnóstico
+          <em class="italic text-amber">operativo</em>
+        </h2>
+
+        <p class="mt-8 text-mist leading-8 max-w-2xl mx-auto">
+          Comparte tus objetivos de reclutamiento,
+          soporte y automatización.
+        </p>
+
+        <a
+          href="application.html"
+          class="inline-block mt-12 bg-amber hover:bg-amber-light text-ink px-10 py-5 text-xs uppercase tracking-[.18em] transition"
+        >
+          Solicitar diagnóstico →
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer
+    class="border-t border-rule py-10 px-8 lg:px-20 flex flex-col md:flex-row gap-5 justify-between items-center"
+  >
+    <p class="text-sm text-mist text-center">
+      © 2026 Nexova Solutions
+    </p>
+
+    <p class="text-sm text-mist text-center">
+      Valencia · Miami
+    </p>
+  </footer>
+
+  <script>
+    // Sticky header
+    const header = document.getElementById("site-header");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= 0) {
+        header.classList.add(
+          "bg-black/90",
+          "backdrop-blur-xl",
+          "border-b",
+          "border-rule"
+        );
+      } else {
+        header.classList.remove(
+          "bg-black/90",
+          "backdrop-blur-xl",
+          "border-b",
+          "border-rule"
+        );
+      }
+    });
+
+    // Mobile menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
+    const closeMenu = document.getElementById("close-menu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileNav.classList.remove("hidden");
+      mobileNav.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileNav.classList.remove("flex");
+      mobileNav.classList.add("hidden");
+      document.body.style.overflow = "";
+    });
+
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("flex");
+        mobileNav.classList.add("hidden");
+        document.body.style.overflow = "";
       });
-    </script>
-  </body>
+    });
+
+    // Reveal
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    reveals.forEach((el) => observer.observe(el));
+
+    // Cursor
+    const cursor = document.getElementById("cursor");
+    const ring = document.getElementById("cursor-ring");
+
+    let mx = 0;
+    let my = 0;
+    let rx = 0;
+    let ry = 0;
+
+    document.addEventListener("mousemove", (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+
+      cursor.style.left = mx + "px";
+      cursor.style.top = my + "px";
+    });
+
+    function animateRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+
+      ring.style.left = rx + "px";
+      ring.style.top = ry + "px";
+
+      requestAnimationFrame(animateRing);
+    }
+
+    animateRing();
+
+    document.querySelectorAll("a, button, article").forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursor.classList.add("grow");
+        ring.classList.add("grow");
+      });
+
+      el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("grow");
+        ring.classList.remove("grow");
+      });
+    });
+  </script>
+
+</body>
 </html>
