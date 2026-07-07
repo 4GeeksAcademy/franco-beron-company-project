@@ -12,10 +12,10 @@ interface CandidateTableProps {
 
 export function CandidateTable({ candidates }: CandidateTableProps) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
+    <div className="overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/80 shadow-[0_20px_60px_-45px_rgba(15,23,42,0.9)] backdrop-blur-sm">
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-zinc-200 text-sm">
-          <thead className="bg-zinc-50 text-left text-xs uppercase tracking-wide text-zinc-500">
+        <table className="min-w-full divide-y divide-slate-800 text-sm">
+          <thead className="bg-slate-950/70 text-left text-xs uppercase tracking-wide text-slate-400">
             <tr>
               <th className="px-5 py-3 font-semibold">Candidate</th>
               <th className="px-5 py-3 font-semibold">Position</th>
@@ -24,24 +24,21 @@ export function CandidateTable({ candidates }: CandidateTableProps) {
               <th className="px-5 py-3 font-semibold">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-zinc-100">
+          <tbody className="divide-y divide-slate-800">
             {candidates.map((candidate) => (
-              <tr
-                key={candidate.id}
-                className="transition hover:bg-emerald-50/40"
-              >
+              <tr key={candidate.id} className="transition hover:bg-cyan-500/5">
                 <td className="px-5 py-4">
                   <div className="flex items-center gap-3">
                     <AvatarInitials name={candidate.full_name} />
                     <div>
-                      <p className="font-medium text-zinc-900">
+                      <p className="font-medium text-slate-100">
                         {candidate.full_name}
                       </p>
-                      <p className="text-zinc-500">{candidate.email}</p>
+                      <p className="text-slate-400">{candidate.email}</p>
                     </div>
                   </div>
                 </td>
-                <td className="px-5 py-4 text-zinc-700">
+                <td className="px-5 py-4 text-slate-300">
                   {candidate.position}
                 </td>
                 <td className="px-5 py-4">
@@ -53,7 +50,7 @@ export function CandidateTable({ candidates }: CandidateTableProps) {
                 <td className="px-5 py-4">
                   <Link
                     href={`/candidates/${candidate.id}`}
-                    className="inline-flex items-center rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-1.5 font-medium text-emerald-700 transition hover:bg-emerald-100"
+                    className="inline-flex items-center rounded-lg border border-cyan-500/35 bg-cyan-500/10 px-3 py-1.5 font-medium text-cyan-200 transition hover:bg-cyan-500/20"
                   >
                     View detail
                   </Link>

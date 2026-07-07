@@ -13,7 +13,7 @@ function buildInitials(name: string): string {
 
 export function AvatarInitials({ name }: AvatarInitialsProps) {
   return (
-    <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-xs font-semibold text-emerald-800">
+    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cyan-500/35 bg-linear-to-br from-cyan-500/25 to-teal-500/15 text-xs font-bold text-cyan-100 shadow-sm">
       {buildInitials(name)}
     </span>
   );

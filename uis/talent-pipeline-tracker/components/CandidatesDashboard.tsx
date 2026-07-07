@@ -82,39 +82,48 @@ export function CandidatesDashboard() {
   };
 
   return (
-    <div className="flex-1 bg-[radial-gradient(circle_at_top_left,#e3f8ef,#f8fafc_50%,#f9f5ff)] px-4 py-8 sm:px-6 lg:px-8">
+    <div className="flex-1 bg-[radial-gradient(circle_at_top_left,#0f3c3f,#0a1425_42%,#070b14)] px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl space-y-6">
-        <header className="rounded-3xl border border-zinc-200/70 bg-white/85 p-6 shadow-sm backdrop-blur-sm">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
-            Talent Operations
-          </p>
-          <h1 className="mt-2 text-3xl font-bold text-zinc-900">
-            Candidate Pipeline Tracker
-          </h1>
-          <p className="mt-2 text-sm text-zinc-600">
-            Track candidates, move them through stages, and keep all hiring
-            notes in one place.
-          </p>
-          <p className="mt-3 inline-flex rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-700">
-            Total shown: {total}
-          </p>
+        <header className="rounded-3xl border border-cyan-500/20 bg-slate-900/80 p-6 shadow-[0_30px_80px_-45px_rgba(6,182,212,0.5)] backdrop-blur-md">
+          <div className="flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
+                Talent Operations
+              </p>
+              <h1 className="mt-2 text-3xl font-bold text-slate-100">
+                Candidate Pipeline Tracker
+              </h1>
+              <p className="mt-2 max-w-2xl text-sm text-slate-300">
+                Track candidates, move them through stages, and keep all hiring
+                notes in one place.
+              </p>
+            </div>
+            <p className="inline-flex rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-200">
+              Total shown: {total}
+            </p>
+          </div>
         </header>
 
-        <CandidateFilters
-          search={searchInput}
-          status={activeFilters.status}
-          stage={activeFilters.stage}
-          onSearchChange={setSearchInput}
-          onStatusChange={(value) => updateSearchParams({ status: value })}
-          onStageChange={(value) => updateSearchParams({ stage: value })}
-        />
-
-        <CandidateForm
-          submitLabel="Create candidate"
-          onSubmit={handleCreateCandidate}
-          isSubmitting={creating}
-          successMessage={formSuccess}
-        />
+        <section className="grid gap-6 xl:grid-cols-12 xl:items-start">
+          <div className="xl:col-span-7">
+            <CandidateFilters
+              search={searchInput}
+              status={activeFilters.status}
+              stage={activeFilters.stage}
+              onSearchChange={setSearchInput}
+              onStatusChange={(value) => updateSearchParams({ status: value })}
+              onStageChange={(value) => updateSearchParams({ stage: value })}
+            />
+          </div>
+          <div className="xl:col-span-5">
+            <CandidateForm
+              submitLabel="Create candidate"
+              onSubmit={handleCreateCandidate}
+              isSubmitting={creating}
+              successMessage={formSuccess}
+            />
+          </div>
+        </section>
 
         {error ? (
           <ErrorState message={error} onAction={() => void refresh()} />
@@ -130,7 +139,17 @@ export function CandidatesDashboard() {
         ) : null}
 
         {!loading && !error && candidates.length > 0 ? (
-          <CandidateTable candidates={candidates} />
+          <section className="space-y-3">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-slate-100">
+                Candidate list
+              </h2>
+              <span className="rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-xs font-medium text-slate-300">
+                {candidates.length} records
+              </span>
+            </div>
+            <CandidateTable candidates={candidates} />
+          </section>
         ) : null}
       </div>
     </div>

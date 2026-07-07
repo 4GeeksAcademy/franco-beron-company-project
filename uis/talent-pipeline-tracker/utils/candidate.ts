@@ -23,16 +23,23 @@ export function toHumanLabel(value: string): string {
 }
 
 export function getStatusTone(status: CandidateStatus): string {
-  if (status === "selected") return "bg-emerald-100 text-emerald-800 border-emerald-200";
-  if (status === "in_progress") return "bg-amber-100 text-amber-800 border-amber-200";
-  if (status === "discarded") return "bg-rose-100 text-rose-800 border-rose-200";
-  return "bg-sky-100 text-sky-800 border-sky-200";
+  if (status === "selected")
+    return "bg-emerald-500/15 text-emerald-200 border-emerald-500/40";
+  if (status === "in_progress")
+    return "bg-amber-500/15 text-amber-200 border-amber-500/40";
+  if (status === "discarded")
+    return "bg-rose-500/15 text-rose-200 border-rose-500/40";
+  return "bg-sky-500/15 text-sky-200 border-sky-500/40";
 }
 
 export function getStageTone(stage: CandidateStage): string {
-  if (stage === "offer_presented") return "bg-purple-100 text-purple-800 border-purple-200";
-  if (stage === "technical_interview") return "bg-indigo-100 text-indigo-800 border-indigo-200";
-  if (stage === "personal_interview") return "bg-fuchsia-100 text-fuchsia-800 border-fuchsia-200";
-  if (stage === "review") return "bg-orange-100 text-orange-800 border-orange-200";
-  return "bg-zinc-100 text-zinc-700 border-zinc-200";
+  if (stage === "offer_presented")
+    return "bg-cyan-500/15 text-cyan-200 border-cyan-500/40";
+  if (stage === "technical_interview")
+    return "bg-blue-500/15 text-blue-200 border-blue-500/40";
+  if (stage === "personal_interview")
+    return "bg-teal-500/15 text-teal-200 border-teal-500/40";
+  if (stage === "review")
+    return "bg-orange-500/15 text-orange-200 border-orange-500/40";
+  return "bg-slate-500/15 text-slate-200 border-slate-500/40";
 }
